@@ -16,6 +16,10 @@ int main(void)
 	char n=7;
 	cmplx r[n];
 	nta_komplexna_odmocnina(z,r,n);
+	for(i=0;i<n;i++)
+	{
+	printf("%lf+i(%lf)\n",r[i].re,r[i].im);
+	}
 	return 0;
 }
 
@@ -40,9 +44,8 @@ void nta_komplexna_odmocnina(cmplx z, cmplx *r, char n)
 		}
 		else
 		{
-		r[k].re=pow(R,1.0/n)*cos((angle+2*k*M_PI)/n);
-		r[k].im=pow(R,1.0/n)*sin((angle+2*k*M_PI)/n);
+			r[k].re=pow(R,1.0/n)*cos((angle+2*k*M_PI)/n);
+			r[k].im=pow(R,1.0/n)*sin((angle+2*k*M_PI)/n);
 		}
-		printf("%lf+i(%lf)\n",r[k].re,r[k].im);
 	}
 }
